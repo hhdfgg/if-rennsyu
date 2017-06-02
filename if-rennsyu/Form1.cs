@@ -13,10 +13,7 @@ namespace if_rennsyu
     public partial class Form1 : Form
     {
         int vx = -10;
-        int vy = 10;
-
-        
-        
+        int vy = -10;
 
         public Form1()
         {
@@ -30,11 +27,12 @@ namespace if_rennsyu
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            button1.Left =button1.Left + vx;
+            button1.Left += vx;
+            button1.Top += vy;
 
             if (button1.Left < 0)
             {
-                button1.Left = button1.Left+20;
+                vx = 10;
             }
         }
     }
